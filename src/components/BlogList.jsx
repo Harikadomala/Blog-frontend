@@ -25,7 +25,7 @@ const BlogList = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("https://blog-frontend-1lj8.onrender.com/api/v1/blogs");
+      const res = await axios.get("https://backend-project-lp11.onrender.com/api/v1/blogs");
       setBlogs(res.data.blogs);
     } catch (err) {
       console.error("Failed to fetch blogs", err);
@@ -38,7 +38,7 @@ const BlogList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://blog-frontend-1lj8.onrender.com/api/v1/blogs/${id}`);
+      await axios.delete(`https://backend-project-lp11.onrender.com/api/v1/blogs/${id}`);
       fetchBlogs();
     } catch (err) {
       console.error("Error deleting blog", err);
@@ -54,7 +54,7 @@ const BlogList = () => {
 
   const handleEditSubmit = async () => {
     try {
-      await axios.put(`https://blog-frontend-1lj8.onrender.com/api/v1/blogs/${selectedBlog._id}`, {
+      await axios.put(`https://backend-project-lp11.onrender.com/api/v1/blogs/${selectedBlog._id}`, {
         title: editedTitle,
         content: editedContent,
       });
