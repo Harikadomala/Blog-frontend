@@ -25,8 +25,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL;
-      await axios.post(`${backendUrl}/contact/submit`, formData);
+      await axios.post('http://localhost:8000/api/v1/contact/submit', formData);
       alert('Message sent successfully!');
       setFormData({ fullName: '', email: '', message: '' });
     } catch (error) {

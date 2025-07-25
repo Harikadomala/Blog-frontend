@@ -25,8 +25,7 @@ const BlogList = () => {
 
   const fetchBlogs = async () => {
     try {
-            const backendUrl = import.meta.env.VITE_BACKEND_URL;
-      const res = await axios.get(`${backendUrl}/blogs`);
+      const res = await axios.get("http://localhost:8000/api/v1/blogs");
       setBlogs(res.data.blogs);
     } catch (err) {
       console.error("Failed to fetch blogs", err);
@@ -39,8 +38,7 @@ const BlogList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL;
-      await axios.delete(`${backendUrl}/blogs/${id}`);
+      await axios.delete(`http://localhost:8000/api/v1/blogs/${id}`);
       fetchBlogs();
     } catch (err) {
       console.error("Error deleting blog", err);
@@ -56,8 +54,7 @@ const BlogList = () => {
 
   const handleEditSubmit = async () => {
     try {
-     const backendUrl = import.meta.env.VITE_BACKEND_URL;
-      await axios.put(`${backendUrl}/blogs/${selectedBlog._id}`, {
+      await axios.put(`http://localhost:8000/api/v1/blogs/${selectedBlog._id}`, {
         title: editedTitle,
         content: editedContent,
       });

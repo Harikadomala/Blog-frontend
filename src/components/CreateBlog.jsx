@@ -15,8 +15,7 @@ const CreateBlog = () => {
     const tagList = tags.split(",").map(tag => tag.trim());
 
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL;
-      const res = await axios.post(`${backendUrl}/blogs/create`, {
+      const res = await axios.post('http://localhost:8000/api/v1/blogs/create', {
         title,
         content,
         tags: tagList
