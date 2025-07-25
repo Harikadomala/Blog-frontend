@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 import { API } from '../service/api';
 import { DataContext } from '../context/DataProvider';
-import { isUserAuthenticated } from '../utils/authHelper';
+//import { isUserAuthenticated } from '../utils/authHelper';
 
 
 const PageContainer = styled(Box)`
