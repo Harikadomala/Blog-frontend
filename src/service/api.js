@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL ='https://backend-project-lp11.onrender.com';
+const URL = 'https://backend-project-lp11.onrender.com';
 
 export const API = {
   userSignup: async (signupData) => {
