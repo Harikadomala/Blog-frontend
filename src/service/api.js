@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:8000';
+const URL ='https://your-backend-service-name.onrender.com';
 
 export const API = {
   userSignup: async (signupData) => {
