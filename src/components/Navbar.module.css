@@ -1,0 +1,30 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #121212; /* Very dark gray / almost black */
+  display: flex;
+  justify-content: center;   /* Center links horizontally */
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar a {
+  color: #e0e0e0;  /* Light gray text */
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #333333; /* Darker gray background on hover */
+  color: #ffffff;            /* White text on hover */
+}
