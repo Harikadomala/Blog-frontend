@@ -15,7 +15,8 @@ const CreateBlog = () => {
     const tagList = tags.split(",").map(tag => tag.trim());
 
     try {
-      const res = await axios.post('https://blog-frontend-1lj8.onrender.com/api/v1/blogs/create', {
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      const res = await axios.post(`${backendUrl}/blogs/create`, {
         title,
         content,
         tags: tagList

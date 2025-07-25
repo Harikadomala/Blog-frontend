@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const URL = 'https://blog-frontend-1lj8.onrender.com/';
+const URL = import.meta.env.VITE_BACKEND_URL;
+
 
 export const API = {
   userSignup: async (signupData) => {
     try {
-      const response = await axios.post(`${URL}/api/v1/auth/signup`, signupData);
+           const response = await axios.post(`${URL}/auth/signup`, signupData);;
       return { isSuccess: true, data: response.data };
     } catch (error) {
       console.error('Signup error:', error.response?.data?.msg || error.message);
@@ -18,7 +19,7 @@ export const API = {
 
   userLogin: async (loginData) => {
     try {
-      const response = await axios.post(`${URL}/api/v1/auth/login`, loginData);
+      const response = await axios.post(`${URL}/auth/login`, loginData);
       return { isSuccess: true, data: response.data };
     } catch (error) {
       console.error('Login error:', error.response?.data?.msg || error.message);

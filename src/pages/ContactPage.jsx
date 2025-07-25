@@ -25,7 +25,8 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://blog-frontend-1lj8.onrender.com/api/v1/contact/submit', formData);
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
+      await axios.post(`${backendUrl}/contact/submit`, formData);
       alert('Message sent successfully!');
       setFormData({ fullName: '', email: '', message: '' });
     } catch (error) {
